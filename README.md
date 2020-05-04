@@ -33,6 +33,7 @@ Change the Filters and classes value.
 - Line 696: set classes=2, the number of categories we want to detect
 - Line 776: set filters=(classes + 5)*3 in our case filters=21
 - Line 783: set classes=2, the number of categories we want to detect
+  darknet_no_gpu detector calc_anchors dataset/obj.data -num_of_clusters 28 -width 416 -height 416
 
 # Colab
 
