@@ -14,7 +14,7 @@
   2.label.txt พิกัดข้อมูลภาพ
 - file.names ภายในจะประกอบด้วย ชื่อคลาส หรือ label
 - file.data เป็นไฟล์สำหรับระบุการลิ้งหาข้อมูลไปยังไฟล์อื่น ภายในไฟล์จะประกอบด้วย
-  1. classes = 3
+  1. classes = 3 จำนวนคลาส หรือ label
   2. train = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
   3. valid = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
   4. names = classes.names เป็นไการลิ้งไปหาไฟล์ classes.names
