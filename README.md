@@ -22,6 +22,18 @@
 - file.cfg เป็นไฟล์สำหรับการตั้งค่าการเทรน
 - ไฟล์โมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
 
+# ปรับไฟล์ .cfg https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2
+I just duplicated the yolov3.cfg file, and made the following edits:
+Change the Filters and classes value.
+- Line 3: set batch=24, this means we will be using 24 images for every training step
+- Line 4: set subdivisions=8, the batch will be divided by 8 to decrease GPU VRAM requirements.
+- Line 603: set filters=(classes + 5)*3 in our case filters=21
+- Line 610: set classes=2, the number of categories we want to detect
+- Line 689: set filters=(classes + 5)*3 in our case filters=21
+- Line 696: set classes=2, the number of categories we want to detect
+- Line 776: set filters=(classes + 5)*3 in our case filters=21
+- Line 783: set classes=2, the number of categories we want to detect
+
 # Colab
 
 # แปลงไฟล์ .weight
