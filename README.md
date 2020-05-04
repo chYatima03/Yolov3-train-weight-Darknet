@@ -9,15 +9,15 @@
 
 # เตรียมข้อมูลสำหรับการเทรนที่ต้องสร้าง
 -ประกอบด้วยไฟล์ 4 ประเภท คือ
-1. file.txt จะประกอบด้วย
-- train.txt สำหรับลิ้งไปหาข้อมูลภาพที่ต้องการเทรน 
-- label.txt พิกัดข้อมูลภาพ
-2. file.names ภายในจะประกอบด้วย ชื่อคลาส หรือ label
-3. file.data เป็นไฟล์สำหรับระบุการลิ้งหาข้อมูลไปยังไฟล์อื่น ภายในไฟล์จะประกอบด้วย
-- classes = 3
-- train = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
-- valid = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
-- names = classes.names เป็นไการลิ้งไปหาไฟล์ classes.names
-- backup = backup/ เป็นโฟลเดอร์สำหรับเก็บไฟล์ .weight หลังจากการเทรน
-4. file.cfg เป็นไฟล์สำหรับการตั้งค่าการเทรน
-5. ไฟล์โมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
+- file.txt จะประกอบด้วย
+1.train.txt สำหรับลิ้งไปหาข้อมูลภาพที่ต้องการเทรน 
+2.label.txt พิกัดข้อมูลภาพ
+- file.names ภายในจะประกอบด้วย ชื่อคลาส หรือ label
+- file.data เป็นไฟล์สำหรับระบุการลิ้งหาข้อมูลไปยังไฟล์อื่น ภายในไฟล์จะประกอบด้วย
+1. classes = 3
+2. train = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
+3. valid = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
+4. names = classes.names เป็นไการลิ้งไปหาไฟล์ classes.names
+5. backup = backup/ เป็นโฟลเดอร์สำหรับเก็บไฟล์ .weight หลังจากการเทรน
+- file.cfg เป็นไฟล์สำหรับการตั้งค่าการเทรน
+- ไฟล์โมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
