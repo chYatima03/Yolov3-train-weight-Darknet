@@ -3,9 +3,10 @@
 - ติดตั้ง Darknet จากเว็บ https://pjreddie.com/darknet/install/
 - ดาวน์โหลด Darknet จาก git clone https://github.com/AlexeyAB/darknet.git
 
-# Window ไม่ใช้ GPU
+# Windows ไม่ใช้ GPU
 - เข้าไปในโฟลเดอร์ darknet/build/darknet/ ทำการ build ไฟล์ darknet_no_gpu.sln กับ visual studio (ใช้2017) 
 - จะได้ ไฟล์ darknet_no_gpu.exe ในโฟลเดอร์ x64
+# Windows ใช้ Darknet ร่วมกับ CUDA เพื่อเทรนโดยใช้ GPU
 
 # เตรียมข้อมูลสำหรับการเทรนที่ต้องสร้าง
 -ประกอบด้วยไฟล์ 4 ประเภท คือ
@@ -32,16 +33,12 @@
 - max_batches หาได้จาก class*2000 จะได้จำนวนครั้งในการเทรน
 จากนั้นทำการเทรนได้ โดยส่วนตัวใช้ Colab ในการเทรนข้อมูล
 
-# Colab
-
-
 # แปลงไฟล์ .weights
-# เริ่มต้นการเทรนด้วย Darknet โดยคำสั่ง
-- darknet detector train พาทและไฟล์.data พาทและไฟล์.cfg พาทและไฟล์darknet53.conv.74 -dont_show
-- ผลที่ได้เมื่อถึงครั้งที่ 100 จะได้ไฟล์ ทุกๆ 1000, 2000, 3000, ... จะได้ไฟล์ เมื่อถึงครั้งสุดท้ายของกรเทรนจะได้ไฟล์ final.weights
+- เริ่มต้นการเทรนด้วย Darknet โดยคำสั่ง
+    - darknet detector train พาทและไฟล์.data พาทและไฟล์.cfg พาทและไฟล์darknet53.conv.74 -dont_show
+    - ผลที่ได้เมื่อถึงครั้งที่ 100 จะได้ไฟล์ ทุกๆ 1000, 2000, 3000, ... จะได้ไฟล์ เมื่อถึงครั้งสุดท้ายของกรเทรนจะได้ไฟล์ final.weights
 
-# การทำไฟล์ Weights ไปใช้
-จะทำการแปลงให้ได้อยู่ 3 ไฟล์ คือ .ckpt, meta และ .pb
+# การทำไฟล์ Weights ไปใช้ จะทำการแปลงให้ได้อยู่ 3 ไฟล์ คือ .ckpt, meta และ .pb
 การแปลงให้ได้ไฟล์ .ckpt และ .meta ทำได้โดย
 1. รันไฟล์ convert_weight.py 
 แปลงจากไฟล์ .ckpt และ.meta เป็น .pb
