@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset</folder>
+	<filename>a-man-looking-pensive-because-he-has-early-signs-of-hiv.jpg</filename>
+	<path>D:\09_tensorflow\dataset\a-man-looking-pensive-because-he-has-early-signs-of-hiv.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1100</width>
+		<height>688</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>612</xmin>
+			<ymin>244</ymin>
+			<xmax>777</xmax>
+			<ymax>536</ymax>
+		</bndbox>
+	</object>
+</annotation>

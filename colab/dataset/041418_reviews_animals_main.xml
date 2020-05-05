@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset</folder>
+	<filename>041418_reviews_animals_main.jpg</filename>
+	<path>D:\09_tensorflow\dataset\041418_reviews_animals_main.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>860</width>
+		<height>460</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Animal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>410</xmin>
+			<ymin>115</ymin>
+			<xmax>657</xmax>
+			<ymax>349</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset</folder>
+	<filename>51OxSefjlnL._AC_.jpg</filename>
+	<path>D:\09_tensorflow\dataset\51OxSefjlnL._AC_.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>375</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Animal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>221</xmin>
+			<ymin>119</ymin>
+			<xmax>355</xmax>
+			<ymax>255</ymax>
+		</bndbox>
+	</object>
+</annotation>

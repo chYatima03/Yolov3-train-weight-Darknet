@@ -1,0 +1,26 @@
+<annotation>
+	<folder>dataset</folder>
+	<filename>191211_gma_thunberg1_hpMain_16x9_992.jpg</filename>
+	<path>D:\09_tensorflow\dataset\191211_gma_thunberg1_hpMain_16x9_992.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>992</width>
+		<height>558</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>378</xmin>
+			<ymin>180</ymin>
+			<xmax>593</xmax>
+			<ymax>449</ymax>
+		</bndbox>
+	</object>
+</annotation>
