@@ -15,11 +15,11 @@
 - file.names ภายในจะประกอบด้วย ชื่อคลาส หรือ label
 - file.data เป็นไฟล์สำหรับระบุการลิ้งหาข้อมูลไปยังไฟล์อื่น ภายในไฟล์จะประกอบด้วย
   1. classes = 3 จำนวนคลาส หรือ label
-  2. train = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
-  3. valid = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ train.txt
-  4. names = classes.names เป็นไการลิ้งไปหาไฟล์ classes.names
+  2. train = dataset/train.txt เป็นไการลิ้งไปหาไฟล์ข้อมูลสำหรับการเทรน train.txt
+  3. valid = dataset/test.txt เป็นไการลิ้งไปหาไฟล์ข้อมูลสำหรับการทดสอบ test.txt
+  4. names = classes.names เป็นไการลิ้งไปหาไฟล์ข้อมูลคลาส classes.names
   5. backup = backup/ เป็นโฟลเดอร์สำหรับเก็บไฟล์ .weight หลังจากการเทรน
-- file.cfg เป็นไฟล์สำหรับการตั้งค่าการเทรน
+- file.cfg เป็นไฟล์สำหรับการตั้งค่าสำหรับการเทรน เริ่มต้นจากการ copy file yolov3.cfg
 - ไฟล์โมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
 
 # ปรับไฟล์ .cfg https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2
