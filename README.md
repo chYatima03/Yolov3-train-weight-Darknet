@@ -19,22 +19,39 @@
   3. valid = dataset/test.txt เป็นไการลิ้งไปหาไฟล์ข้อมูลสำหรับการทดสอบ test.txt
   4. names = classes.names เป็นไการลิ้งไปหาไฟล์ข้อมูลคลาส classes.names
   5. backup = backup/ เป็นโฟลเดอร์สำหรับเก็บไฟล์ .weight หลังจากการเทรน
-- file.cfg เป็นไฟล์สำหรับการตั้งค่าสำหรับการเทรน เริ่มต้นจากการ copy file yolov3.cfg
-- ไฟล์โมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
+- ไฟล์เวทเริ่มต้นโมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
+- file.cfg เป็นไฟล์สำหรับการตั้งค่าสำหรับการเทรน เริ่มต้นโหลดไฟล์ config ชื่อ yolov3.cfg จาก https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg 
 
-# ปรับไฟล์ .cfg https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2
-I just duplicated the yolov3.cfg file, and made the following edits:
-Change the Filters and classes value.
-- Line 3: set batch=24, this means we will be using 24 images for every training step
-- Line 4: set subdivisions=8, the batch will be divided by 8 to decrease GPU VRAM requirements.
-- Line 603: set filters=(classes + 5)*3 in our case filters=21
-- Line 610: set classes=2, the number of categories we want to detect
-- Line 689: set filters=(classes + 5)*3 in our case filters=21
-- Line 696: set classes=2, the number of categories we want to detect
-- Line 776: set filters=(classes + 5)*3 in our case filters=21
-- Line 783: set classes=2, the number of categories we want to detect
-  - darknet_no_gpu detector calc_anchors dataset/obj.data -num_of_clusters 28 -width 416 -height 416
+
+# การปรับไฟล์ ัyolov3.cfg https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2
+- batch = 1 เป็น batch = จำนวนภาพที่ใช้ในการเทรน หมายถึงในทุกๆครั้งจะมีการเทรนภาพทั้งหมดกี่ภาพ ตามที่ระบุ
+- subdivisions=1 เปลี่ยนเป็น subdivisions=8
+- ค้นหาคำว่า yolo เจอคำว่า filters ก่อนถึงคำว่า yolo ให้เปลี่ยนเป็น โดยคิดจาก filters=(classes + 5)*3 ทุกๆบรรทัด มักอยู่บรรทัด 603 689 776
+- classes เปลี่ยนเป็นจำนวนคลาสหรือจำนวนlabel ที่ต้องการเทรน ทุกๆบรรทัด มักจะอยู่บรรทัดที่ 610 696 783
+- anchors หาได้โดยใช้คำ่สั่ง darknet_no_gpu detector calc_anchors พาทที่อยู่และไฟล์.data -num_of_clusters จำนวนภาพที่ใช้เทรน -width 416 -height 416  จะได้ไฟล์ anchors.txt เปิดไฟล์แล้วcopy เลขทั้งหมด ใส่ในไฟล์ yolov3.cfg
+- max_batches หาได้จาก class*2000 จะได้จำนวนครั้งในการเทรน
+จากนั้นทำการเทรนได้ โดยส่วนตัวใช้ Colab ในการเทรนข้อมูล
 
 # Colab
 
-# แปลงไฟล์ .weight
+
+# แปลงไฟล์ .weights
+# เริ่มต้นการเทรนด้วย Darknet โดยคำสั่ง
+- darknet detector train พาทและไฟล์.data พาทและไฟล์.cfg พาทและไฟล์darknet53.conv.74 -dont_show
+- ผลที่ได้เมื่อถึงครั้งที่ 100 จะได้ไฟล์ ทุกๆ 1000, 2000, 3000, ... จะได้ไฟล์ เมื่อถึงครั้งสุดท้ายของกรเทรนจะได้ไฟล์ final.weights
+
+# การทำไฟล์ Weights ไปใช้
+จะทำการแปลงให้ได้อยู่ 3 ไฟล์ คือ .ckpt, meta และ .pb
+การแปลงให้ได้ไฟล์ .ckpt และ .meta ทำได้โดย
+1. รันไฟล์ convert_weight.py 
+แปลงจากไฟล์ .ckpt และ.meta เป็น .pb
+1. รันไฟล์ convert.py 
+  - ใน window รัน python convert.py --checkpoint พาท/ไฟล์.ckpt --model พาท/ไฟล์.ckpt.meta --out-path ./export
+  
+# ทดสอบไฟล์ .ckpt และ .meta
+- ภาพนิ่ง
+python test_single_image.py ./พาท/ไฟล์รูป.jpg  
+- วิดีโอ
+python video_test.py ./พาท/ไฟล์วิดีโอ.mp4
+
+
