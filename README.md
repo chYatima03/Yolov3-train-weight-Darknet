@@ -33,8 +33,8 @@
 - subdivisions=1 เปลี่ยนเป็น subdivisions=8
 - ค้นหาคำว่า yolo เจอคำว่า filters ก่อนถึงคำว่า yolo ให้เปลี่ยนเป็น โดยคิดจาก filters=(classes + 5)*3 ทุกๆบรรทัด มักอยู่บรรทัด 603 689 776
 - classes เปลี่ยนเป็นจำนวนคลาสหรือจำนวนlabel ที่ต้องการเทรน ทุกๆบรรทัด มักจะอยู่บรรทัดที่ 610 696 783
-- anchors หาได้โดยใช้คำ่สั่ง darknet_no_gpu detector calc_anchors พาทที่อยู่และไฟล์.data -num_of_clusters จำนวนภาพที่ใช้เทรน -width 416 -height 416  จะได้ไฟล์ anchors.txt เปิดไฟล์แล้วcopy เลขทั้งหมด ใส่ในไฟล์ yolov3.cfg ตัวอย่างภาพ
-    - ![Imgur](https://i.imgur.com/rAlis9u.png)
+- anchors หาได้โดยใช้คำ่สั่ง darknet_no_gpu detector calc_anchors พาทที่อยู่และไฟล์.data -num_of_clusters 9 -width 416 -height 416  จะได้ไฟล์ anchors.txt เปิดไฟล์แล้วcopy เลขทั้งหมด ใส่ในไฟล์ yolov3.cfg ตัวอย่างภาพ
+    
 - max_batches หาได้จาก class*2000 จะได้จำนวนครั้งในการเทรน
 จากนั้นทำการเทรนได้ โดยส่วนตัวใช้ Colab ในการเทรนข้อมูล
 
