@@ -1,5 +1,5 @@
 # Yolov3-train-weight-Darknet
-    ![Imgur](https://i.imgur.com/YDeDViB.png)
+![Imgur](https://i.imgur.com/YDeDViB.png)
 - ติดตั้ง Darknet จากเว็บ https://pjreddie.com/darknet/install/
 - ดาวน์โหลด Darknet จาก git clone https://github.com/AlexeyAB/darknet.git
 
@@ -35,7 +35,7 @@
 - ค้นหาคำว่า yolo เจอคำว่า filters ก่อนถึงคำว่า yolo ให้เปลี่ยนเป็น โดยคิดจาก filters=(classes + 5)*3 ทุกๆบรรทัด มักอยู่บรรทัด 603 689 776
 - classes เปลี่ยนเป็นจำนวนคลาสหรือจำนวนlabel ที่ต้องการเทรน ทุกๆบรรทัด มักจะอยู่บรรทัดที่ 610 696 783
 - anchors หาได้โดยใช้คำ่สั่ง darknet_no_gpu detector calc_anchors พาทที่อยู่และไฟล์.data -num_of_clusters จำนวนภาพที่ใช้เทรน -width 416 -height 416  จะได้ไฟล์ anchors.txt เปิดไฟล์แล้วcopy เลขทั้งหมด ใส่ในไฟล์ yolov3.cfg ตัวอย่างภาพ
-    ![Imgur](https://i.imgur.com/rAlis9u.png)
+    - ![Imgur](https://i.imgur.com/rAlis9u.png)
 - max_batches หาได้จาก class*2000 จะได้จำนวนครั้งในการเทรน
 จากนั้นทำการเทรนได้ โดยส่วนตัวใช้ Colab ในการเทรนข้อมูล
 
@@ -59,5 +59,5 @@ python test_single_image.py ./พาท/ไฟล์รูป.jpg
 python video_test.py ./พาท/ไฟล์วิดีโอ.mp4
 
 ผลลัพธ์ที่ได้
-![Imgur](https://i.imgur.com/mkD0xp5.png)
+![Imgur](https://i.imgur.com/tjrkMDM.jpg)
 
