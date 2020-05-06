@@ -28,7 +28,7 @@
 - file.cfg เป็นไฟล์สำหรับการตั้งค่าสำหรับการเทรน เริ่มต้นโหลดไฟล์ config ชื่อ yolov3.cfg จาก https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg 
 
 
-# การปรับไฟล์ ัyolov3.cfg https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2
+# การปรับไฟล์ ัyolov3.cfg 
 - batch = 1 เป็น batch = จำนวนภาพที่ใช้ในการเทรน หมายถึงในทุกๆครั้งจะมีการเทรนภาพทั้งหมดกี่ภาพ ตามที่ระบุ
 - subdivisions=1 เปลี่ยนเป็น subdivisions=8
 - ค้นหาคำว่า yolo เจอคำว่า filters ก่อนถึงคำว่า yolo ให้เปลี่ยนเป็น โดยคิดจาก filters=(classes + 5)*3 ทุกๆบรรทัด มักอยู่บรรทัด 603 689 776
@@ -45,10 +45,10 @@
     - ผลที่ได้เมื่อถึงครั้งที่ 100 จะได้ไฟล์ ทุกๆ 1000, 2000, 3000, ... จะได้ไฟล์ เมื่อถึงครั้งสุดท้ายของกรเทรนจะได้ไฟล์ final.weights
 
 # การทำไฟล์ Weights ไปใช้ จะทำการแปลงให้ได้อยู่ 3 ไฟล์ คือ .ckpt, meta และ .pb
-การแปลงให้ได้ไฟล์ .ckpt และ .meta ทำได้โดย
-1. รันไฟล์ convert_weight.py 
-แปลงจากไฟล์ .ckpt และ.meta เป็น .pb
-1. รันไฟล์ convert.py 
+- การแปลงให้ได้ไฟล์ .ckpt และ .meta ทำได้โดย
+  - รันไฟล์ convert_weight.py 
+- แปลงจากไฟล์ .ckpt และ.meta เป็น .pb
+  - รันไฟล์ convert.py 
   - ใน window รัน python convert.py --checkpoint พาท/ไฟล์.ckpt --model พาท/ไฟล์.ckpt.meta --out-path ./export
   
 # ทดสอบไฟล์ .ckpt และ .meta
@@ -61,4 +61,8 @@ python video_test.py ./พาท/ไฟล์วิดีโอ.mp4
    - ![Imgur](https://i.imgur.com/tjrkMDM.jpg)
    
 #อ้างอิง
-
+- https://medium.com/@manivannan_data/how-to-train-yolov3-to-detect-custom-objects-ccbcafeb13d2
+- https://medium.com/@chamkung1412/%E0%B8%84%E0%B8%B1%E0%B8%A1%E0%B8%A0%E0%B8%B5%E0%B8%A3%E0%B9%8C-yolo-v2-v3-object-detection-%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88-%E0%B8%AA%E0%B8%AD%E0%B8%99-custom-model-%E0%B9%83%E0%B8%8A%E0%B9%89-dataset-%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B2%E0%B9%80%E0%B8%97%E0%B8%A3%E0%B8%99-b69cb050cc4c
+- https://pysource.com/2019/06/27/yolo-object-detection-using-opencv-with-python/
+- https://stackoverflow.com/questions/54068396/should-i-change-the-value-of-anchors-in-yolo-obj-cfg
+- https://docs.khadas.com/vim3/HowToTransformYolo.html
