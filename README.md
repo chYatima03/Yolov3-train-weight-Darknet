@@ -1,5 +1,4 @@
 # Yolov3-train-weight-Darknet
-![Imgur](https://i.imgur.com/YDeDViB.png)
 - ติดตั้ง Darknet จากเว็บ https://pjreddie.com/darknet/install/
 - ดาวน์โหลด Darknet จาก git clone https://github.com/AlexeyAB/darknet.git
 
@@ -24,7 +23,7 @@
   3. valid = dataset/train.txt เป็นการลิ้งไปหาไฟล์ข้อมูลสำหรับการทดสอบ train.txt แต่สมควรแบ่งข้อมูลสำหรับเทรนและเทส อย่างละ 50% 
   4. names = classes.names เป็นไการลิ้งไปหาไฟล์ข้อมูลคลาส classes.names
   5. backup = backup/ เป็นโฟลเดอร์สำหรับเก็บไฟล์ .weight หลังจากการเทรน
-    ![Imgur](https://i.imgur.com/NTWbdmN.png)
+    - ![Imgur](https://i.imgur.com/NTWbdmN.png)
 - ไฟล์เวทเริ่มต้นโมเดลจาก darknet ดาวน์โหลดจาก https://pjreddie.com/media/files/darknet53.conv.74
 - file.cfg เป็นไฟล์สำหรับการตั้งค่าสำหรับการเทรน เริ่มต้นโหลดไฟล์ config ชื่อ yolov3.cfg จาก https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg 
 
@@ -42,7 +41,7 @@
 # แปลงไฟล์ .weights
 - เริ่มต้นการเทรนด้วย Darknet โดยคำสั่ง
     - darknet detector train พาทและไฟล์.data พาทและไฟล์.cfg พาทและไฟล์darknet53.conv.74 -dont_show ตัวอย่าง
-    ![Imgur](https://i.imgur.com/7dehSMq.png)
+    - ![Imgur](https://i.imgur.com/7dehSMq.png)
     - ผลที่ได้เมื่อถึงครั้งที่ 100 จะได้ไฟล์ ทุกๆ 1000, 2000, 3000, ... จะได้ไฟล์ เมื่อถึงครั้งสุดท้ายของกรเทรนจะได้ไฟล์ final.weights
 
 # การทำไฟล์ Weights ไปใช้ จะทำการแปลงให้ได้อยู่ 3 ไฟล์ คือ .ckpt, meta และ .pb
@@ -59,5 +58,5 @@ python test_single_image.py ./พาท/ไฟล์รูป.jpg
 python video_test.py ./พาท/ไฟล์วิดีโอ.mp4
 
 ผลลัพธ์ที่ได้
-![Imgur](https://i.imgur.com/tjrkMDM.jpg)
+   - ![Imgur](https://i.imgur.com/tjrkMDM.jpg)
 
