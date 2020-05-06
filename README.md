@@ -41,7 +41,7 @@
 # แปลงไฟล์ .weights
 - เริ่มต้นการเทรนด้วย Darknet โดยคำสั่ง
     - darknet detector train พาทและไฟล์.data พาทและไฟล์.cfg พาทและไฟล์darknet53.conv.74 -dont_show ตัวอย่าง
-    - ![Imgur](https://i.imgur.com/7dehSMq.png)
+    - ![Imgur](https://i.imgur.com/ErgIQs9.png)
     - ผลที่ได้เมื่อถึงครั้งที่ 100 จะได้ไฟล์ ทุกๆ 1000, 2000, 3000, ... จะได้ไฟล์ เมื่อถึงครั้งสุดท้ายของกรเทรนจะได้ไฟล์ final.weights
 
 # การทำไฟล์ Weights ไปใช้ จะทำการแปลงให้ได้อยู่ 3 ไฟล์ คือ .ckpt, meta และ .pb
@@ -59,4 +59,6 @@ python video_test.py ./พาท/ไฟล์วิดีโอ.mp4
 
 ผลลัพธ์ที่ได้
    - ![Imgur](https://i.imgur.com/tjrkMDM.jpg)
+   
+#อ้างอิง
 
