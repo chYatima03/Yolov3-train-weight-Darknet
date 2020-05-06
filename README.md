@@ -12,7 +12,16 @@
 -ประกอบด้วยไฟล์ 4 ประเภท คือ
 - file.txt จะประกอบด้วย
     1.train.txt สำหรับลิ้งไปหาข้อมูลภาพที่ต้องการเทรน 
-    [Image](https://i.imgur.com/mkD0xp5.png)
+    [img]https://i.ibb.co/TtP9Ch7/anchors.png[/img]
+[img]https://i.ibb.co/Kb7yCWw/data.png[/img]
+[img]https://i.ibb.co/VtJvP20/ex-anchors.png[/img]
+[img]https://i.ibb.co/mCbzmkP/file-train.png[/img]
+[img]https://i.ibb.co/Msx9nD9/file-weight.png[/img]
+[img]https://i.ibb.co/YXmJYGC/label-image.png[/img]
+[img]https://i.ibb.co/k5rxrbG/names.png[/img]
+[img]https://i.ibb.co/PwGT6tw/not-anchors.png[/img]
+[img]https://i.ibb.co/c1sY6g6/predictions-1-1.jpg[/img]
+[img]https://i.ibb.co/XYmtzQ7/train.png[/img]
     2.label.txt พิกัดข้อมูลภาพ
 - file.names ภายในจะประกอบด้วย ชื่อคลาส หรือ label
 - file.data เป็นไฟล์สำหรับระบุการลิ้งหาข้อมูลไปยังไฟล์อื่น ภายในไฟล์จะประกอบด้วย
